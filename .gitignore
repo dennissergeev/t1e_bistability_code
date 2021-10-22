@@ -1,3 +1,6 @@
+# Project-specific
+dask-worker-space
+
 # Compiled files
 *.py[cod]
 *.a
