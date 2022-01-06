@@ -27,7 +27,17 @@ OPT_LABELS = {
     },
     "sens-noradcld": {
         "group": "rad",
-        "title": "No CRF",
+        "title": "No CRE",
+        "kw_plt": {"color": "C1", "linestyle": "-"},
+    },
+    "sens-fixedsst": {
+        "group": "sst",
+        "title": "Fixed $T_{s,global}$",
+        "kw_plt": {"color": "C2", "linestyle": "-"},
+    },
+    "sens-fixedsst-day-night": {
+        "group": "sst",
+        "title": "Fixed $T_{s,night}$",
         "kw_plt": {"color": "C2", "linestyle": "-"},
     },
     "sens-hcapsea1e7": {
@@ -157,5 +167,6 @@ cold_traps = iris.Constraint(
     **{um.x: lambda y: -160 < y.point < -140, um.y: lambda y: 45 < abs(y.point) < 55}
 )
 troposphere = l_range_constr(0, 17)
+free_troposphere = l_range_constr(3, 18)
 upper_troposphere = l_range_constr(7, 13)
 spinup = iris.Constraint(**{um.fcst_prd: lambda x: x.point <= 500 * 24})

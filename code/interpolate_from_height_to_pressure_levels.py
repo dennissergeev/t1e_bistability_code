@@ -16,9 +16,7 @@ import mypaths
 
 P_LEVELS = np.arange(950, 0, -50) * 1e2
 
-img_prefix = "ch111_spinup"
-time_prof = "mean_days0_499"
-plotdir = mypaths.plotdir / "sa" / GLM_SUITE_ID / img_prefix
+time_prof = "mean_days2000_2950"
 
 for suite_label, suite_prop in tqdm(SUITE_LABELS.items()):
     top_label = f"{GLM_SUITE_ID}_{suite_label}"
@@ -26,9 +24,13 @@ for suite_label, suite_prop in tqdm(SUITE_LABELS.items()):
     const = init_const(planet, directory=mypaths.constdir)
     procdir = mypaths.sadir / top_label
     for opt_label in tqdm(OPT_LABELS.keys(), leave=False):
-        if opt_label not in ["base"]:
+        if opt_label not in ["sens-fixedsst-day-night"]:
             continue
         sim_label = f"{suite_label}_{opt_label}"
+        # if sim_label in ["grcs_sens-noradcld"]:
+        #     time_prof = "mean_days2000_2200"
+        # else:
+        #     time_prof = "mean_days2000_2950"
         cl = load_data(
             files=procdir / f"{top_label}_{opt_label}_{time_prof}.nc",
         )

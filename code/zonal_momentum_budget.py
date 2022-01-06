@@ -109,6 +109,10 @@ class ZonalMomBudgetFluxForm(AtmoSim):
         return zonal_mean(self.v)
 
     @cached_property
+    def rho_zm(self):
+        return zonal_mean(self.dens)
+
+    @cached_property
     def v_prime(self):
         return self.v - self.v_zm
 
