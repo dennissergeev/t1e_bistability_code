@@ -15,8 +15,8 @@ sadir = datadir / "sa"  # standalone suites directory
 constdir = topdir / "code" / "const"
 
 # Plotting output
-# plotdir = topdir / "plots"
-plotdir = topdir.parent / "plots"
+plotdir = topdir / "plots"
+# plotdir = topdir.parent / "plots"
 plotdir.mkdir(parents=True, exist_ok=True)
 
 # TeX output (tables)

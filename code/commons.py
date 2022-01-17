@@ -7,6 +7,12 @@ from aeolus.region import Region
 from aeolus.subset import l_range_constr
 
 
+SIM_LABELS = {
+    "grcs_base": {"planet": "hab1", "title": "CTRL", "kw_plt": {"color": "C0"}},
+    "grcs_sens-t280k": {"planet": "hab1", "title": "GR; $T_0=280K$", "kw_plt": {"color": "C1"}},
+}
+
+
 SUITE_LABELS = {
     "grcs": {
         "planet": "hab1",
