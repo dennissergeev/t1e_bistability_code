@@ -8,83 +8,87 @@ from aeolus.subset import l_range_constr
 
 
 SIM_LABELS = {
-    "grcs_base": {"planet": "hab1", "title": "CTRL", "kw_plt": {"color": "C0"}},
-    "grcs_sens-t280k": {"planet": "hab1", "title": "GR; $T_0=280K$", "kw_plt": {"color": "C1"}},
+    "base": {"planet": "hab1", "title": "Base", "kw_plt": {"color": "C0"}},
+    "sens-t280k": {"planet": "hab1", "title": "T0_280", "kw_plt": {"color": "C1"}},
 }
 
-
-SUITE_LABELS = {
-    "grcs": {
-        "planet": "hab1",
-        "title": "Conv: MassFlux",
-        "kw_plt": {"color": "C0"},
-    },
-    "llcs": {
-        "planet": "hab1",
-        "title": "Conv: Adjust",
-        "kw_plt": {"color": "C1"},
-    },
-}
+# SUITE_LABELS = {
+#     "grcs": {
+#         "planet": "hab1",
+#         "title": "Conv: MassFlux",
+#         "kw_plt": {"color": "C0"},
+#     },
+#     "llcs": {
+#         "planet": "hab1",
+#         "title": "Conv: Adjust",
+#         "kw_plt": {"color": "C1"},
+#     },
+# }
 OPT_LABELS = {
     "base": {
         "group": None,
-        "title": "Control",
+        "title": "Base",
+        "kw_plt": {"color": "C0", "linestyle": "-"},
+    },
+    "sens-llcs_all_rain": {
+        "group": "conv",
+        "title": "Adjust",
         "kw_plt": {"color": "C0", "linestyle": "-"},
     },
     "sens-noradcld": {
         "group": "rad",
-        "title": "No CRE",
+        "title": "CRE_off",
         "kw_plt": {"color": "C1", "linestyle": "-"},
     },
     "sens-fixedsst": {
         "group": "sst",
-        "title": "Fixed $T_{s,global}$",
+        "title": "FixedSST_g",
         "kw_plt": {"color": "C2", "linestyle": "-"},
     },
     "sens-fixedsst-day-night": {
         "group": "sst",
-        "title": "Fixed $T_{s,night}$",
+        "title": "FixedSST_n",
         "kw_plt": {"color": "C2", "linestyle": "-"},
-    },
-    "sens-hcapsea1e7": {
-        "group": "hcapsea",
-        "title": "Slab depth = 2.5m",
-        "kw_plt": {"color": "C3", "linestyle": ":"},
     },
     "sens-hcapsea2e7": {
         "group": "hcapsea",
-        "title": "Slab depth = 5m",
+        "title": "SOD_5",
         "kw_plt": {"color": "C3", "linestyle": "--"},
     },
     "sens-hcapsea4e7": {
         "group": "hcapsea",
-        "title": "Slab depth = 10m",
+        "title": "SOD_10",
         "kw_plt": {"color": "C3", "linestyle": "-."},
     },
     "sens-t250k": {
         "group": "t",
-        "title": "$T_0=250K$",
+        "title": "T0_250",
         "kw_plt": {"color": "C4", "marker": "."},
     },
     "sens-t260k": {
         "group": "t",
-        "title": "$T_0=260K$",
+        "title": "T0_260",
         "kw_plt": {"color": "C4", "marker": "s"},
     },
     "sens-t270k": {
         "group": "t",
-        "title": "$T_0=270K$",
+        "title": "T0_270",
         "kw_plt": {"color": "C4", "marker": "P"},
     },
     "sens-t280k": {
         "group": "t",
-        "title": "$T_0=280K$",
+        "title": "T0_280",
         "kw_plt": {"color": "C4", "marker": "X"},
     },
     "sens-t290k": {
         "group": "t",
-        "title": "$T_0=290K$",
+        "title": "T0_290",
         "kw_plt": {"color": "C4", "marker": "*"},
+    },
+    "sens-startswap": {
+        "group": "start",
+        "title": "Spunup_Start",
+        "kw_plt": {"color": "C5", "marker": "-"},
     },
 }
 
