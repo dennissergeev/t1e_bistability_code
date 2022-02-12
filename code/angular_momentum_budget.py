@@ -190,7 +190,10 @@ class AngularMomentumBudget(AtmoSim):
         name="stat_horiz",
         attrs={
             "title": "Stationary horizontal",
-            "tex": r"",
+            "tex": (
+                r"-\frac{1}{r \cos \vartheta} \frac{\partial}{\partial \vartheta}"
+                r"\left(\left[\bar{V}^{*} \bar{m}^{*}\right] \cos \vartheta\right)"
+            ),
             "color": "tab:blue",
         },
     )
@@ -205,7 +208,10 @@ class AngularMomentumBudget(AtmoSim):
         name="stat_vert",
         attrs={
             "title": "Stationary vertical",
-            "tex": r"",
+            "tex": (
+                r"-\frac{1}{r^{2}} \frac{\partial}{\partial r}"
+                r"\left(\left[\bar{W}^{*} \bar{m}^{*}\right] r^{2}\right)"
+            ),
             "color": "tab:cyan",
         },
     )
@@ -220,7 +226,10 @@ class AngularMomentumBudget(AtmoSim):
         name="trans_horiz",
         attrs={
             "title": "Transient horizontal",
-            "tex": r"",
+            "tex": (
+                r"-\frac{1}{r \cos \vartheta} \frac{\partial}{\partial \vartheta}"
+                r"\left(\left[\overline{V\prime m\prime}\right] \cos \vartheta\right)"
+            ),
             "color": "tab:purple",
         },
     )
@@ -235,7 +244,10 @@ class AngularMomentumBudget(AtmoSim):
         name="trans_vert",
         attrs={
             "title": "Transient vertical",
-            "tex": r"",
+            "tex": (
+                r"-\frac{1}{r^{2}} \frac{\partial}{\partial r}"
+                r"\left(\left[\overline{W\prime m\prime}\right] r^{2}\right)"
+            ),
             "color": "tab:pink",
         },
     )
@@ -250,7 +262,10 @@ class AngularMomentumBudget(AtmoSim):
         name="mean_horiz",
         attrs={
             "title": "Mean horizontal",
-            "tex": r"",
+            "tex": (
+                r"\frac{1}{r \cos \vartheta} \frac{\partial}{\partial \vartheta}"
+                r"([\bar{V}][\bar{m}] \cos \vartheta)"
+            ),
             "color": "tab:brown",
         },
     )
@@ -265,7 +280,9 @@ class AngularMomentumBudget(AtmoSim):
         name="mean_vert",
         attrs={
             "title": "Mean vertical",
-            "tex": r"",
+            "tex": (
+                r"\frac{1}{r^{2}} \frac{\partial}{\partial r}([\bar{W}][\bar{m}] r^{2})"
+            ),
             "color": "tab:orange",
         },
     )
@@ -319,7 +336,7 @@ class AngularMomentumBudget(AtmoSim):
         name="mean_adv_horiz",
         attrs={
             "title": "Mean horizontal (advection form)",
-            "tex": r"",
+            "tex": r"-\frac{[\bar{V}]}{r} \frac{\partial[\bar{m}]}{\partial \vartheta}",
             "color": "tab:green",
         },
     )
@@ -332,7 +349,7 @@ class AngularMomentumBudget(AtmoSim):
         name="mean_adv_vert",
         attrs={
             "title": "Mean vertical (advection form)",
-            "tex": r"",
+            "tex": r"-[\bar{W}] \frac{\partial[\bar{m}]}{\partial r}",
             "color": "tab:olive",
         },
     )
@@ -371,7 +388,7 @@ class AngularMomentumBudget(AtmoSim):
         name="total_change_in_mass_angular_momentum_with_time",
         attrs={
             "title": "Total change in mass angular momentum with time",
-            "tex": r"\frac{\Delta[\rho\m]}{\Delta t}",
+            "tex": r"\frac{\Delta[\rho m]}{\Delta T}",
             "color": "tab:grey",
         },
     )
