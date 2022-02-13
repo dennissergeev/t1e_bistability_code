@@ -6,7 +6,7 @@ import iris
 from iris.analysis.maths import apply_ufunc
 import numpy as np
 
-from aeolus.calc import deriv, time_mean, zonal_mean
+from aeolus.calc import deriv, spatial_mean, time_mean, zonal_mean
 from aeolus.coord import coord_to_cube, isel
 from aeolus.core import AtmoSim
 from aeolus.meta import update_metadata
@@ -33,8 +33,16 @@ class AngularMomentumBudget(AtmoSim):
         "trans_vert",
     ]
     term_group_labels = ["mean", "stat", "trans"]
-    tex_units = "$J$ $m^{-3}$"
+    tex_units = r"$J$ $m^{-3}$"
     _units = tex2cf_units(tex_units)
+    
+    @cached_property
+    def sigma_p_tsm(self):  # TODO: move to AtmoSim
+        return spatial_mean(time_mean(self.sigma_p))
+    
+    @cached_property
+    def u_tzm(self):  # TODO: move to AtmoSim
+        return zonal_mean(time_mean(self.u))
 
     @cached_property
     def datetimes(self):
@@ -83,6 +91,10 @@ class AngularMomentumBudget(AtmoSim):
         return self.lat_cos ** 2
 
     @cached_property
+    def rho_u(self):
+        return self.dens * self.u
+    
+    @cached_property
     def rho_v(self):
         return self.dens * self.v
 
@@ -93,6 +105,10 @@ class AngularMomentumBudget(AtmoSim):
     @cached_property
     def ang_mom_tzm(self):
         return time_mean(zonal_mean(self.ang_mom))
+    
+    @cached_property
+    def rho_u_tzm(self):  # TODO: move to AtmoSim
+        return zonal_mean(time_mean(self.rho_u))
 
     @cached_property
     def rho_v_tzm(self):
@@ -297,7 +313,6 @@ class AngularMomentumBudget(AtmoSim):
         name="mean",
         attrs={
             "title": "Mean",
-            "tex": r"",
             "color": "tab:orange",
         },
     )
@@ -310,7 +325,6 @@ class AngularMomentumBudget(AtmoSim):
         name="stat",
         attrs={
             "title": "Stationary",
-            "tex": r"",
             "color": "tab:blue",
         },
     )
@@ -323,7 +337,6 @@ class AngularMomentumBudget(AtmoSim):
         name="trans",
         attrs={
             "title": "Transient",
-            "tex": r"",
             "color": "tab:purple",
         },
     )
@@ -362,7 +375,6 @@ class AngularMomentumBudget(AtmoSim):
         name="mean_adv",
         attrs={
             "title": "Mean advection",
-            "tex": r"",
             "color": "tab:green",
         },
     )
@@ -375,7 +387,6 @@ class AngularMomentumBudget(AtmoSim):
         name="sum",
         attrs={
             "title": "Sum",
-            "tex": r"",
             "color": "tab:grey",
         },
     )
