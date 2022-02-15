@@ -16,7 +16,7 @@ from tqdm.notebook import tqdm
 
 # My packages and local scripts
 import mypaths
-from aeolus.calc import water_path  # integrate,; precip_sum,; vertical_mean,
+from aeolus.calc import precip_sum, water_path  # integrate,; vertical_mean,
 from aeolus.const import add_planet_conf_to_cubes, init_const
 from aeolus.coord import get_cube_rel_days, isel
 from aeolus.core import AtmoSim
@@ -128,6 +128,37 @@ XY_VRBL = {
         "title": "Cloud water path",
         "tex_units": "$kg$ $m^{-2}$",
     },
+    "sfc_shf": {
+        "recipe": lambda cl: cl.extract_cube(um.sfc_shf),
+        "method": "contourf",
+        "kw_plt": {
+            "cmap": cm.bilbao,
+            "levels": np.arange(-50, 101, 25),
+        },
+        "title": "Sensible heat flux",
+        "tex_units": "$W$ $m^{-2}$",
+    },
+    "sfc_lhf": {
+        "recipe": lambda cl: cl.extract_cube(um.sfc_lhf),
+        "method": "contourf",
+        "kw_plt": {
+            "cmap": cm.acton_r,
+            "levels": np.arange(-25, 301, 25),
+        },
+        "title": "Latent heat flux",
+        "tex_units": "$W$ $m^{-2}$",
+    },
+    "precip_sum": {
+        "recipe": lambda cl: precip_sum(cl),
+        "method": "contourf",
+        "kw_plt": {
+            "cmap": cm.acton_r,
+            "levels": sorted([*np.logspace(-1, 3, 5)] + [*np.logspace(-1, 3, 5) / 2]),
+            "norm": mpl.colors.LogNorm(),
+        },
+        "title": "Precipitation",
+        "tex_units": "$mm$ $day^{-1}$",
+    },
 }
 
 
@@ -146,7 +177,7 @@ def parse_args(args=None):
         required=True,
         nargs="+",
         help="Variable names",
-        choices=[*XY_VRBL.keys()]
+        choices=[*XY_VRBL.keys()],
     )
     ap.add_argument(
         "-f",
