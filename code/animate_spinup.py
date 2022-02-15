@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Make animations."""
 import argparse
 import warnings
 from pathlib import Path
@@ -8,6 +11,7 @@ import matplotlib.animation
 import matplotlib.pyplot as plt
 import numpy as np
 from cmcrameri import cm
+from matplotlib.offsetbox import AnchoredText
 from tqdm.notebook import tqdm
 
 # My packages and local scripts
@@ -23,8 +27,14 @@ from aeolus.subset import DimConstr  # , l_range_constr
 from commons import GLM_SUITE_ID, SIM_LABELS  # free_troposphere,; troposphere,
 from pouch.clim_diag import calc_derived_cubes
 from pouch.log import create_logger
-from pouch.plot import (KW_AUX_TTL,  # KW_ZERO_LINE,; linspace_pm1,
-                        KW_MAIN_TTL, KW_SBPLT_LABEL, XLOCS, YLOCS, use_style)
+from pouch.plot import (
+    KW_AUX_TTL,  # KW_ZERO_LINE,; linspace_pm1,
+    KW_MAIN_TTL,
+    KW_SBPLT_LABEL,
+    XLOCS,
+    YLOCS,
+    use_style,
+)
 
 # from math import prod
 
@@ -37,8 +47,8 @@ XY_VRBL = {
         "method": "contourf",
         "kw_plt": {
             "cmap": cm.tokyo,
-            "levels": np.arange(0, 0.41, 0.05),
-            "extend": "max",
+            "levels": np.arange(0, 0.51, 0.05),
+            # "extend": "max",
         },
         "title": "TOA albedo",
         "tex_units": "%",
@@ -78,10 +88,43 @@ XY_VRBL = {
         "title": "High cloud area fraction",
         "tex_units": "%",
     },
+    "wvp": {
+        "recipe": lambda cl: water_path(cl, kind="water_vapour"),
+        "method": "contourf",
+        "kw_plt": {"cmap": cm.lapaz_r, "levels": np.arange(0, 201, 10)},
+        "title": "Water vapour path",
+        "tex_units": "$kg$ $m^{-2}$",
+    },
+    "iwp": {
+        "recipe": lambda cl: water_path(cl, kind="ice_water"),
+        "method": "contourf",
+        "kw_plt": {
+            "cmap": cm.devon_r,
+            "levels": np.logspace(-6, 0, 7),
+            "norm": mpl.colors.LogNorm(),
+        },
+        "title": "Ice water path",
+        "tex_units": "$kg$ $m^{-2}$",
+    },
+    "lwp": {
+        "recipe": lambda cl: water_path(cl, kind="liquid_water"),
+        "method": "contourf",
+        "kw_plt": {
+            "cmap": cm.devon_r,
+            "levels": np.logspace(-5, 1, 7),
+            "norm": mpl.colors.LogNorm(),
+        },
+        "title": "Liquid water path",
+        "tex_units": "$kg$ $m^{-2}$",
+    },
     "cwp": {
         "recipe": lambda cl: water_path(cl, kind="cloud_water"),
         "method": "contourf",
-        "kw_plt": {"cmap": cm.devon_r},
+        "kw_plt": {
+            "cmap": cm.devon_r,
+            "levels": np.logspace(-5, 1, 7),
+            "norm": mpl.colors.LogNorm(),
+        },
         "title": "Cloud water path",
         "tex_units": "$kg$ $m^{-2}$",
     },
@@ -103,6 +146,7 @@ def parse_args(args=None):
         required=True,
         nargs="+",
         help="Variable names",
+        choices=[*XY_VRBL.keys()]
     )
     ap.add_argument(
         "-f",
@@ -114,8 +158,14 @@ def parse_args(args=None):
     ap.add_argument(
         "--one_frame",
         type=int,
-        default=0,
+        default=None,
         help="If not zero, show that frame only",
+    )
+    ap.add_argument(
+        "--add_min_max",
+        action="store_true",
+        default=False,
+        help="Add min/max values to the plot",
     )
     return ap.parse_args(args)
 
@@ -157,6 +207,17 @@ def main(args=None):
                     lons, lats, cube.data, **vrbl_prop["kw_plt"]
                 )
                 fig.colorbar(_p0, cax=cax, pad=0.02)
+                if add_min_max:
+                    cube_min = cube.data.min()
+                    cube_max = cube.data.max()
+                    at = AnchoredText(
+                        f"Min: {cube_min:>3.1e}\nMax: {cube_max:>3.1e}",
+                        prop=dict(color="k", size="x-small"),
+                        frameon=False,
+                        loc="lower right",
+                    )
+                    at.patch.set_facecolor(mpl.colors.to_rgba(bg_color, alpha=0.75))
+                    ax.add_artist(at)
         for ax in axd.values():
             if (
                 ax.get_subplotspec().is_last_col()
@@ -170,9 +231,12 @@ def main(args=None):
     args = parse_args(args)
     # Use custom mplstyle
     use_style()
+    bg_color = mpl.colors.to_rgb(plt.rcParams["figure.facecolor"])
+    # fg_color = mpl.colors.to_rgb(plt.rcParams["text.color"])
 
     # Variables
     vrbls_to_show = args.names
+    add_min_max = args.add_min_max
 
     # Common directories
     img_prefix = f"{GLM_SUITE_ID}_spinup"
@@ -227,21 +291,24 @@ def main(args=None):
         mosaic,
         gridspec_kw={
             # set the width ratios between the columns
-            "width_ratios": [30, 1] * ncols
+            "width_ratios": [30, 1]
+            * ncols
         },
     )
 
-    L.info(f"Making {vidname.stem}")
-    _make_frame(args.frame)
-    if args.one_frame:
+    if args.one_frame is not None:
+        L.info(f"Showing frame {args.one_frame}")
+        _make_frame(args.one_frame)
         plt.show()
     else:
+        L.info(f"Making {vidname.stem}")
+        _make_frame(0)
         anim = mpl.animation.FuncAnimation(
             fig, _make_frame, frames=frames, interval=100, blit=False
         )
         anim.save(vidname)
         plt.close()
-    L.success(f"Saved to {vidname}")
+        L.success(f"Saved to {vidname}")
     L.info(f"Execution time: {time() - t0:.1f}s")
 
 
