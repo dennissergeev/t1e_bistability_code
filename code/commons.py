@@ -172,7 +172,8 @@ GLM_RUNID = r"umglaa"  # file prefix
 GLM_FILE_REGEX = GLM_RUNID + r".p[b,c,d,e]{1}[0]{6}(?P<timestamp>[0-9]{2,6})_00"
 GLM_START_DAY = 0
 
-SS_REGION = Region(-5, 5, -5, 5, "substellar_pm05")
+SS_PM05 = Region(-5, 5, -5, 5, "substellar_pm05")
+SS_PM15 = Region(-15, 15, -15, 15, "substellar_pm15")
 
 # Tidally-locked setups
 DAYSIDE = Region(-90, 90, -90, 90, "dayside")
