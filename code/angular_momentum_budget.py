@@ -35,11 +35,11 @@ class AngularMomentumBudget(AtmoSim):
     term_group_labels = ["mean", "stat", "trans"]
     tex_units = r"$J$ $m^{-3}$"
     _units = tex2cf_units(tex_units)
-    
+
     @cached_property
     def sigma_p_tsm(self):  # TODO: move to AtmoSim
         return spatial_mean(time_mean(self.sigma_p))
-    
+
     @cached_property
     def u_tzm(self):  # TODO: move to AtmoSim
         return zonal_mean(time_mean(self.u))
@@ -86,6 +86,22 @@ class AngularMomentumBudget(AtmoSim):
         return lat_cos_cube
 
     @cached_property
+    @update_metadata(name="sin(lat)", units="1")
+    def lat_sin(self):
+        lat_cube = coord_to_cube(
+            self._cubes.extract(self.dim_constr.relax.y)[0],
+            self.model.y,
+            broadcast=False,
+        )
+        lat_sin_cube = apply_ufunc(np.sin, apply_ufunc(np.deg2rad, lat_cube))
+        return lat_sin_cube
+
+    @cached_property
+    @update_metadata(name="coriolis_parameter", units="s-1")
+    def coriolis(self):
+        return 2 * self.const.planet_rotation_rate * self.lat_sin
+
+    @cached_property
     @update_metadata(name="cos(lat)**2", units="1")
     def lat_cos_sq(self):
         return self.lat_cos ** 2
@@ -93,7 +109,7 @@ class AngularMomentumBudget(AtmoSim):
     @cached_property
     def rho_u(self):
         return self.dens * self.u
-    
+
     @cached_property
     def rho_v(self):
         return self.dens * self.v
@@ -105,7 +121,7 @@ class AngularMomentumBudget(AtmoSim):
     @cached_property
     def ang_mom_tzm(self):
         return time_mean(zonal_mean(self.ang_mom))
-    
+
     @cached_property
     def rho_u_tzm(self):  # TODO: move to AtmoSim
         return zonal_mean(time_mean(self.rho_u))
