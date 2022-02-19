@@ -6,6 +6,10 @@ from aeolus.model import um
 from aeolus.region import Region
 from aeolus.subset import l_range_constr
 
+from pouch import RUNTIME
+
+RUNTIME.figsave_stamp = False
+
 
 SIM_LABELS = {
     "base": {"planet": "hab1", "title": "Base", "kw_plt": {"color": "C0"}},
