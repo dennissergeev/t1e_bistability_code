@@ -1,6 +1,9 @@
 <h1 align="center">
-Code for paper
+  Bistability of atmospheric circulation on TRAPPIST-1e
 </h1>
+<p align="center">
+  Code used to reproduce figures from the paper
+</p>
 <p align="center">
   <img src="https://img.shields.io/badge/wip-%20%F0%9F%9A%A7%20under%20construction%20%F0%9F%9A%A7-yellow"
        alt="wip">
