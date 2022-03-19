@@ -16,97 +16,100 @@ SIM_LABELS = {
     "sens-t280k": {"planet": "hab1", "title": "T0_280", "kw_plt": {"color": "C1"}},
 }
 
-# SUITE_LABELS = {
-#     "grcs": {
-#         "planet": "hab1",
-#         "title": "Conv: MassFlux",
-#         "kw_plt": {"color": "C0"},
-#     },
-#     "llcs": {
-#         "planet": "hab1",
-#         "title": "Conv: Adjust",
-#         "kw_plt": {"color": "C1"},
-#     },
-# }
+REGIMES = {
+    "SJ": {"kw_plt": {"color": "C0"}},
+    "DJ": {"kw_plt": {"color": "C1"}},
+}
+
 OPT_LABELS = {
     "base": {
         "group": "base",
         "title": "Base",
         "kw_plt": {"color": "C0", "marker": "o"},
-        "regime": "EJ",
+        "regime": "SJ",
     },
     "sens-t250k": {
         "group": "t",
         "title": "T0_250",
         "kw_plt": {"color": "C1", "marker": "."},
-        "regime": "EJ",
+        "regime": "SJ",
     },
     "sens-t260k": {
         "group": "t",
         "title": "T0_260",
         "kw_plt": {"color": "C1", "marker": "."},
-        "regime": "MJ",
+        "regime": "DJ",
     },
     "sens-t270k": {
         "group": "t",
         "title": "T0_270",
         "kw_plt": {"color": "C1", "marker": "."},
-        "regime": "MJ",
+        "regime": "DJ",
     },
     "sens-t280k": {
         "group": "t",
         "title": "T0_280",
         "kw_plt": {"color": "C1", "marker": "o"},
-        "regime": "MJ",
+        "regime": "DJ",
     },
     "sens-t290k": {
         "group": "t",
         "title": "T0_290",
         "kw_plt": {"color": "C1", "marker": "."},
-        "regime": "EJ",
+        "regime": "SJ",
     },
     "sens-startswap": {
         "group": "start",
         "title": "Spunup_Start",
         "kw_plt": {"color": "C2", "marker": "v"},
-        "regime": "MJ",
+        "regime": "DJ",
     },
     "sens-hcapsea2e7": {
         "group": "hcapsea",
         "title": "SOD_5",
         "kw_plt": {"color": "C3", "marker": ">"},
-        "regime": "EJ",
+        "regime": "SJ",
     },
     "sens-hcapsea4e7": {
         "group": "hcapsea",
         "title": "SOD_10",
         "kw_plt": {"color": "C3", "marker": "<"},
-        "regime": "EJ",
+        "regime": "SJ",
     },
     "sens-fixedsst": {
         "group": "sst",
         "title": "FixedSST_g",
         "kw_plt": {"color": "C4", "marker": "X"},
-        "regime": "MJ",
+        "regime": "DJ",
     },
     "sens-fixedsst-day-night": {
         "group": "sst",
         "title": "FixedSST_n",
         "kw_plt": {"color": "C4", "marker": "P"},
-        "regime": "EJ",
+        "regime": "SJ",
     },
     "sens-llcs_all_rain": {
         "group": "conv",
         "title": "Adjust",
         "kw_plt": {"color": "C5", "marker": "p"},
-        "regime": "MJ",
+        "regime": "DJ",
     },
     "sens-noradcld": {
         "group": "rad",
         "title": "CRE_off",
         "kw_plt": {"color": "C6", "marker": "D"},
-        "regime": "MJ",
+        "regime": "DJ",
     },
+}
+
+SENS_EXP_GROUPS = {
+    "base": {"title": "Base", "kw_plt": dict(marker="o")},
+    "t": {"title": "T0", "kw_plt": dict(marker="*")},
+    "start": {"title": "Start", "kw_plt": dict(marker=".")},
+    "hcapsea": {"title": "SOD", "kw_plt": dict(marker="X")},
+    "sst": {"title": "FixedSST", "kw_plt": dict(marker="P")},
+    "conv": {"title": "Adjust", "kw_plt": dict(marker="D")},
+    "rad": {"title": "CRE_off", "kw_plt": dict(marker="p")},
 }
 
 # Selected variables
