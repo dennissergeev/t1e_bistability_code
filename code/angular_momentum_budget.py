@@ -33,6 +33,7 @@ class AngularMomentumBudget(AtmoSim):
         "trans_vert",
     ]
     term_group_labels = ["mean", "stat", "trans"]
+    term_group_adv_labels = ["mean_adv", "stat", "trans"]
     tex_units = r"$J$ $m^{-3}$"
     _units = tex2cf_units(tex_units)
 
@@ -151,6 +152,10 @@ class AngularMomentumBudget(AtmoSim):
     @cached_property
     def ang_mom_zm(self):
         return zonal_mean(self.ang_mom)
+
+    @cached_property
+    def rho_zm(self):
+        return zonal_mean(self.dens)
 
     @cached_property
     def rho_v_zm(self):
@@ -426,3 +431,23 @@ class AngularMomentumBudget(AtmoSim):
         delta_t = (self.datetimes[-1] - self.datetimes[0]) / timedelta(seconds=1)
         delta_t_cube = iris.cube.Cube(data=delta_t, units="s")
         return (rho_ang_mom_end - rho_ang_mom_start) / delta_t_cube
+
+    @cached_property
+    @update_metadata(
+        units=_units,
+        name="total_change_in_angular_momentum_with_time",
+        attrs={
+            "title": "Change in angular momentum with time",
+            "tex": r"\frac{\Delta[\rho m]}{\Delta T} - \bar{m}\frac{\Delta[\rho]}{\Delta T}",
+            "color": "tab:grey",
+        },
+    )
+    def ang_mom_time_change(self):
+        term_a = self.rho_ang_mom_time_change
+        rho_start = isel(self.rho_zm, self.model.t, 0)
+        rho_end = isel(self.rho_zm, self.model.t, -1)
+
+        delta_t = (self.datetimes[-1] - self.datetimes[0]) / timedelta(seconds=1)
+        delta_t_cube = iris.cube.Cube(data=delta_t, units="s")
+        term_b = self.ang_mom_tzm * (rho_end - rho_start) / delta_t_cube
+        return term_a - term_b
