@@ -2,8 +2,12 @@
 Code for paper
 </h1>
 <p align="center">
+  <img src="https://img.shields.io/badge/wip-%20%F0%9F%9A%A7%20under%20construction%20%F0%9F%9A%A7-yellow"
+       alt="wip">
+</p>
+<p align="center">
 <a href="https://www.python.org/downloads/">
-<img src="https://img.shields.io/badge/python-3.9-blue.svg?logo=python&logoColor=white"
+<img src="https://img.shields.io/badge/python-3.10-blue.svg?logo=python&logoColor=white"
      alt="Python 3.9"></a>
 <a href="LICENSE">
 <img src="https://img.shields.io/badge/License-LGPL%20v3-blue.svg?logo=gnu"
