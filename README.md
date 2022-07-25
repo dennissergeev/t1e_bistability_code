@@ -1,12 +1,15 @@
 <h1 align="center">
   Bistability of atmospheric circulation on TRAPPIST-1e
 </h1>
+<h2 align="center">
+  Denis E. Sergeev, Neil T. Lewis, F. Hugo Lambert, Nathan J. Mayne, Ian A. Boutle, James Manners, and Krisztian Kohary
+</h2>
+<h3 align="center">
+  Accepted for publication in Planetary Science Journal.
+</h3>
 <p align="center">
-  Code used to reproduce figures from the paper
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/wip-%20%F0%9F%9A%A7%20under%20construction%20%F0%9F%9A%A7-yellow"
-       alt="wip">
+  Code for reproducing figures from the paper.
+  Model data are available upon request (raw data O(100 Gb)).
 </p>
 <p align="center">
 <a href="https://www.python.org/downloads/">
