@@ -1,0 +1,34 @@
+name: t1e_bistability
+channels:
+- conda-forge
+dependencies:
+- aeolus
+- cartopy>=0.20
+- cython
+- cmcrameri
+- cmocean
+- dask
+- flake8
+- fastprogress
+- h5py
+- ipykernel
+- ipywidgets
+- iris>=3.2
+- latlon23
+- loguru
+- matplotlib>=3.5
+- metpy>=1.0
+- nc-time-axis
+- netCDF4
+- numpy
+- pandas
+- python=3.10
+- pip
+- pytest
+- python-stratify
+- scipy
+- tqdm
+- xarray
+- windspharm
+- pip:
+  - imageio_ffmpeg
