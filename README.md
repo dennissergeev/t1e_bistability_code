@@ -1,4 +1,9 @@
 <p align="center">
+  <img src="https://img.shields.io/badge/wip-%20%F0%9F%9A%A7%20under%20construction%20%F0%9F%9A%A7-yellow"
+       alt="wip">
+</p>
+
+<p align="center">
 <a href="https://arxiv.org/abs/2207.12342">
 <img src="https://img.shields.io/badge/arXiv-2207.12342-red"
      alt="arXiv preprint"></a>
@@ -33,17 +38,12 @@ Notebooks for each figure are in the [`code/` directory](code), while the figure
 
 |  #  | Figure | Notebook |
 |:---:|:-------|:---------|
-|  1 | [Transmission spectra](plots/) | [Transmission-Spectra.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/master/code/Transmission-Spectra.ipynb) |
+|  1 | [Transmission spectra](plots/) | [Transmission-Spectra.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Transmission-Spectra.ipynb) |
 
 
 <h2>Want to run the code? Here are the instructions.</h2>
 
 <h3>Get the data</h3>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/wip-%20%F0%9F%9A%A7%20under%20construction%20%F0%9F%9A%A7-yellow"
-       alt="wip">
-</p>
 
 Please email the lead author, [Denis E. Sergeev](https://dennissergeev.github.io), to get the data.
 
