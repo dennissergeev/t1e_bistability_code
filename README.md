@@ -28,14 +28,18 @@
 </p>
 
 <h2>Want to run the code? Here are the instructions.</h2>
+
 <h3>Get the data</h3>
+
 <p align="center">
   <img src="https://img.shields.io/badge/wip-%20%F0%9F%9A%A7%20under%20construction%20%F0%9F%9A%A7-yellow"
        alt="wip">
 </p>
+
 Please email the lead author, [Denis E. Sergeev](https://dennissergeev.github.io), to get the data.
 
 <h3>Set up Python environment</h3>
+
 To recreate the required environment for running Python code, follow these steps. (Skip the first two steps if you have Jupyter Lab with `nb_conda_kernels` installed already.)
 ```bash
 conda env create --file environment.yml
@@ -57,6 +61,7 @@ mamba env create --file environment.yml
 5. Run the notebooks manually or use `make` shortcuts (type `make help` for help)
 
 <h3>Open the code</h3>
+
 1. Start the Jupyter Lab, for example from the command line (from the `base` environment):
 ```bash
 jupyter lab
