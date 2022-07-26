@@ -27,6 +27,15 @@
   Model data are available upon request (raw data O(100 Gb)).
 </p>
 
+<h2>What is in this repository?</h2>
+
+Notebooks for each figure are in the [`code/` directory](code), while the figures themselves are in the `plots/` directory.
+
+|  #  | Figure | Notebook |
+|:---:|:-------|:---------|
+|  1 | [Transmission spectra](plots/) | [Transmission-Spectra.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/master/code/Transmission-Spectra.ipynb) |
+
+
 <h2>Want to run the code? Here are the instructions.</h2>
 
 <h3>Get the data</h3>
