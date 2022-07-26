@@ -12,6 +12,10 @@
   Model data are available upon request (raw data O(100 Gb)).
 </p>
 <p align="center">
+<a href="https://arxiv.org/abs/2207.12342">
+<img src="https://img.shields.io/badge/arXiv-2207.12342-red"
+     alt="arXiv preprint"></a>
+<br>
 <a href="https://www.python.org/downloads/">
 <img src="https://img.shields.io/badge/python-3.10-blue.svg?logo=python&logoColor=white"
      alt="Python 3.9"></a>
