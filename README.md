@@ -38,7 +38,8 @@ Notebooks for each figure are in the [`code/` directory](code), while the figure
 
 |  #  | Figure | Notebook |
 |:---:|:-------|:---------|
-|  1 | [Transmission spectra](plots/) | [Transmission-Spectra.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Transmission-Spectra.ipynb) |
+|  1  | [Mean climate diagnostics](plots/ch111_mean/ch111_mean__all_sim__u_max_eq_jet_300hpa_jet_lat_free_trop_ratio_dn_ep_temp_diff_trop_t_sfc_min__u_temp_vcross.png) | [Fig01-Mean-Climate-Diagnostics-All-Experiments.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig01-Mean-Climate-Diagnostics-All-Experiments.ipynb) |
+|  11 | [Transmission spectra](plots/) | [Transmission-Spectra.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Transmission-Spectra.ipynb) |
 
 
 <h2>Want to run the code? Here are the instructions.</h2>
