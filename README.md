@@ -40,6 +40,7 @@ Notebooks for each figure are in the [`code/` directory](code), while the figure
 |:---:|:-------|:---------|
 |  1  | [Mean climate diagnostics](plots/ch111_mean/ch111_mean__all_sim__u_max_eq_jet_300hpa_jet_lat_free_trop_ratio_dn_ep_temp_diff_trop_t_sfc_min__u_temp_vcross.png) | [Fig01-Mean-Climate-Diagnostics-All-Experiments.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig01-Mean-Climate-Diagnostics-All-Experiments.ipynb) |
 |  2  | [Emergence of superrotation](plots/ch111_spinup/ch111_spinup__base_sens-t280k__u_eq_jet_max_wave_amplitude_300hpa.png) | [Fig02-Spinup-Superrotation.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig02-Spinup-Superrotation.ipynb) |
+|  3  | [First 200 days of heating rates, water vapor path, Eady Growth Rate](plots/ch111_spinup/ch111_spinup__base_sens-t280k__tseries__wvp_d_dt_sw_d_dt_lw_d_dt_cv_d_dt_diab_d_eady_growth__day000-200_mean.png) | [Fig03-Spinup-Heating-Rates.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig03-Spinup-Heating-Rates.ipynb) |
 |  11 | [Transmission spectra](plots/) | [Transmission-Spectra.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Transmission-Spectra.ipynb) |
 
 
