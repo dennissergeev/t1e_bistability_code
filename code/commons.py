@@ -60,7 +60,7 @@ OPT_LABELS = {
     },
     "sens-startswap": {
         "group": "start",
-        "title": "Spunup_Start",
+        "title": "DJ_Start",
         "kw_plt": {"color": "C2", "marker": "v"},
         "regime": "DJ",
     },
@@ -164,6 +164,21 @@ VAR_PACK_MAIN = {
         um.cld_liq_v,
         um.cld_v,
     ],
+}
+
+TERMINATORS = {
+    "west_term": {
+        "constraint": iris.Constraint(**{um.x: -90}),
+        "title": "Western (morning) terminator",
+        "label": "west_term",
+        "kw_plt": dict(linestyle="-"),
+    },
+    "east_term": {
+        "constraint": iris.Constraint(**{um.x: 90}),
+        "title": "Eastern (evening) terminator",
+        "label": "east_term",
+        "kw_plt": dict(linestyle="--"),
+    },
 }
 
 # HORIZ_WINDS_NAMES = [um.u, um.v]

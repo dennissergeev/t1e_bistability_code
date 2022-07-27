@@ -8,7 +8,7 @@ home = Path.home()
 topdir = Path(__file__).absolute().parent.parent
 
 # Modelling results
-datadir = topdir.parent / "modelling" / "um" / "results"
+datadir = topdir.parent.parent / "modelling" / "um" / "results"
 
 sadir = datadir / "sa"  # standalone suites directory
 

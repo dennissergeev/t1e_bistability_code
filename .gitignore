@@ -1,7 +1,7 @@
 # Project-specific
 dask-worker-space
 logs/
-plots/
+# plots/
 
 # Compiled files
 *.py[cod]
