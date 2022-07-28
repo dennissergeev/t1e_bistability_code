@@ -1,9 +1,4 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/wip-%20%F0%9F%9A%A7%20under%20construction%20%F0%9F%9A%A7-yellow"
-       alt="wip">
-</p>
-
-<p align="center">
 <a href="https://arxiv.org/abs/2207.12342">
 <img src="https://img.shields.io/badge/arXiv-2207.12342-red"
      alt="arXiv preprint"></a>
@@ -31,6 +26,18 @@
   Code for reproducing figures from the paper.
   Model data are available upon request (raw data O(100 Gb)).
 </p>
+
+<h2>Bibtex entry</h2>
+
+    @article{Sergeev22_bistability,
+       author = {Denis E. Sergeev and Neil T. Lewis and F. Hugo Lambert and Nathan J. Mayne and Ian A. Boutle and James Manners and Krisztian Kohary},
+       doi = {10.48550/arxiv.2207.12342},
+       isbn = {2207.12342v1},
+       month = {7},
+       title = {Bistability of the atmospheric circulation on TRAPPIST-1e},
+       url = {https://arxiv.org/abs/2207.12342v1},
+       year = {2022},
+    }
 
 <h2>What is in this repository?</h2>
 
@@ -89,16 +96,3 @@ mamba env create --file environment.yml
 jupyter lab
 ```
 2. Open noteboks in the `t1e_bistability` environment and start coding.
-
-<h2>Bibtex entry</h2>
-
-    @article{Sergeev22_bistability,
-       author = {Denis E. Sergeev and Neil T. Lewis and F. Hugo Lambert and Nathan J. Mayne and Ian A. Boutle and James Manners and Krisztian Kohary},
-       doi = {10.48550/arxiv.2207.12342},
-       isbn = {2207.12342v1},
-       month = {7},
-       title = {Bistability of the atmospheric circulation on TRAPPIST-1e},
-       url = {https://arxiv.org/abs/2207.12342v1},
-       year = {2022},
-    }
-
