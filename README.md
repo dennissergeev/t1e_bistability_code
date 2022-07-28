@@ -47,13 +47,14 @@ Notebooks for each figure are in the [`code/` directory](code), while the figure
 |  7  | [Steady state atmospheric circulation](plots/ch111_mean/ch111_mean__base_sens-t280k__temp_300hpa_winds_ghgt_dev_map_500hpa.png) | [Fig07-Steady-State-Circulation.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig07-Steady-State-Circulation.ipynb) |
 |  8  | [Helmholtz decomposition](plots/ch111_mean/ch111_mean__base_sens-t280k__rotdiv_300hpa.png) | [Fig08-Helmholtz-Decomposition.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig08-Helmholtz-Decomposition.ipynb) |
 |  9  | [Moist static energy budget](plots/ch111_mean/ch111_mean__base_sens-t280k__tmm_rot_div_flux_mse__tot_rot.png) | [Fig09-MSE-Flux-Divergence.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig09-MSE-Flux-Divergence.ipynb) |
+| 10  | [Surface temperature, water vapor and cloud path](plots/ch111_mean/ch111_mean__base_sens-t280k__t_sfc_10m_winds_wvp_cwp.png) | [Fig10-Steady-State-Sfc-Temp-WVP-CWP.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig10-Steady-State-Sfc-Temp-WVP-CWP.ipynb) |
 
 
 <h2>Want to run the code? Here are the instructions.</h2>
 
 <h3>Get the data</h3>
 
-Please email the lead author, [Denis E. Sergeev](https://dennissergeev.github.io), to get the data.
+Please email the lead author, [Denis E. Sergeev](https://dennissergeev.github.io), to get the data (raw data O(100 Gb)).
 
 <h3>Set up Python environment</h3>
 
