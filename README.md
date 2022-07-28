@@ -48,6 +48,7 @@ Notebooks for each figure are in the [`code/` directory](code), while the figure
 |  8  | [Helmholtz decomposition](plots/ch111_mean/ch111_mean__base_sens-t280k__rotdiv_300hpa.png) | [Fig08-Helmholtz-Decomposition.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig08-Helmholtz-Decomposition.ipynb) |
 |  9  | [Moist static energy budget](plots/ch111_mean/ch111_mean__base_sens-t280k__tmm_rot_div_flux_mse__tot_rot.png) | [Fig09-MSE-Flux-Divergence.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig09-MSE-Flux-Divergence.ipynb) |
 | 10  | [Surface temperature, water vapor and cloud path](plots/ch111_mean/ch111_mean__base_sens-t280k__t_sfc_10m_winds_wvp_cwp.png) | [Fig10-Steady-State-Sfc-Temp-WVP-CWP.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig10-Steady-State-Sfc-Temp-WVP-CWP.ipynb) |
+| 12  | [Vertical profiles at the terminators](plots/ch111_mean/ch111_mean__vprof_term__base_sens-t280k__temp_sh_cld_liq_mf_cld_ice_mf.png) | [Fig12-Vertical-Profiles-Terminators.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig12-Vertical-Profiles-Terminators.ipynb) |
 
 
 <h2>Want to run the code? Here are the instructions.</h2>
