@@ -46,6 +46,7 @@ Notebooks for each figure are in the [`code/` directory](code), while the figure
 |  6  | [Surface heat budget in night-side cold traps](plots/ch111_spinup/ch111_spinup__base_sens-t280k__dt_sfc_dt_sfc_net_down_lw_sfc_shf_sfc_lhf_sfc_down_lw__cold_traps.png) | [Fig06-Spinup-Cold-Traps-Sfc-Heat-Budget.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig06-Spinup-Cold-Traps-Sfc-Heat-Budget.ipynb) |
 |  7  | [Steady state atmospheric circulation](plots/ch111_mean/ch111_mean__base_sens-t280k__temp_300hpa_winds_ghgt_dev_map_500hpa.png) | [Fig07-Steady-State-Circulation.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig07-Steady-State-Circulation.ipynb) |
 |  8  | [Helmholtz decomposition](plots/ch111_mean/ch111_mean__base_sens-t280k__rotdiv_300hpa.png) | [Fig08-Helmholtz-Decomposition.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig08-Helmholtz-Decomposition.ipynb) |
+|  9  | [Moist static energy budget](plots/ch111_mean/ch111_mean__base_sens-t280k__tmm_rot_div_flux_mse__tot_rot.png) | [Fig09-MSE-Flux-Divergence.ipynb](https://nbviewer.jupyter.org/github/dennissergeev/t1e_bistability_code/blob/main/code/Fig09-MSE-Flux-Divergence.ipynb) |
 
 
 <h2>Want to run the code? Here are the instructions.</h2>
