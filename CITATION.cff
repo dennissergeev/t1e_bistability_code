@@ -21,10 +21,12 @@ authors:
   - family-names: Kohary
     given-names: Krisztian
     orcid: 0000-0003-0165-4885
-title: "Bistability of atmospheric circulation on TRAPPIST-1e"
-journal: Planetary Science Journal
+title: "Bistability of the Atmospheric Circulation on TRAPPIST-1e"
+journal: The Planetary Science Journal
 year: 2022
-pages: 1--31
-doi: 10.48550/arXiv.2207.12342
-url: https://arxiv.org/abs/2207.12342
-date-released: 2022-07-22
+pages: 214
+volume: 3
+issue: 9
+doi: 10.3847/PSJ/ac83be
+url: https://iopscience.iop.org/article/10.3847/PSJ/ac83be
+date-released: 2022-09-15
