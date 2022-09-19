@@ -1,10 +1,13 @@
 <p align="center">
+<a href="https://iopscience.iop.org/article/10.3847/PSJ/ac83be">
+<img src="https://img.shields.io/badge/DOI-10.3847%2FPSJ%2Fac83be-purple"
+     alt="Published article"></a>
 <a href="https://arxiv.org/abs/2207.12342">
 <img src="https://img.shields.io/badge/arXiv-2207.12342-red"
      alt="arXiv preprint"></a>
 <a href="https://www.python.org/downloads/">
 <img src="https://img.shields.io/badge/python-3.10-blue.svg"
-     alt="Python 3.9"></a>
+     alt="Python 3.10"></a>
 <a href="LICENSE">
 <img src="https://img.shields.io/badge/License-LGPL%20v3-green.svg"
      alt="License: LGPL v3"></a>
@@ -20,7 +23,7 @@
   Denis E. Sergeev, Neil T. Lewis, F. Hugo Lambert, Nathan J. Mayne, Ian A. Boutle, James Manners, and Krisztian Kohary
 </h3>
 <h4 align="center">
-  Accepted for publication in Planetary Science Journal.
+  Published in Planetary Science Journal.
 </h4>
 <p align="center">
   Code for reproducing figures from the paper.
@@ -30,14 +33,21 @@
 <h2>Bibtex entry</h2>
 
     @article{Sergeev22_bistability,
-       author = {Denis E. Sergeev and Neil T. Lewis and F. Hugo Lambert and Nathan J. Mayne and Ian A. Boutle and James Manners and Krisztian Kohary},
-       doi = {10.48550/arxiv.2207.12342},
-       isbn = {2207.12342v1},
-       month = {7},
-       title = {Bistability of the atmospheric circulation on TRAPPIST-1e},
-       url = {https://arxiv.org/abs/2207.12342v1},
-       year = {2022},
+        author = {Denis E. Sergeev and Neil T. Lewis and F. Hugo Lambert and Nathan J. Mayne and Ian A. Boutle and James Manners and Krisztian Kohary},
+        doi = {10.3847/PSJ/ac83be},
+        issn = {2632-3338},
+        issue = {9},
+        journal = {The Planetary Science Journal},
+        keywords = {Atmospheric circulation,Exoplanet atmospheres,Habitable planets,Habitable zone,Planetary atmospheres,Theoretical models,Transmission spectroscopy,Water vapor},
+        month = {9},
+        pages = {214},
+        publisher = {IOP Publishing},
+        title = {Bistability of the Atmospheric Circulation on TRAPPIST-1e},
+        volume = {3},
+        url = {https://iopscience.iop.org/article/10.3847/PSJ/ac83be https://iopscience.iop.org/article/10.3847/PSJ/ac83be/meta},
+        year = {2022},
     }
+
 
 <h2>What is in this repository?</h2>
 
