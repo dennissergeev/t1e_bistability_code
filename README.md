@@ -80,13 +80,11 @@ Please email the lead author, [Denis E. Sergeev](https://dennissergeev.github.io
 <h3>Set up Python environment</h3>
 
 To recreate the required environment for running Python code, follow these steps. (Skip the first two steps if you have Jupyter Lab with `nb_conda_kernels` installed already.)
-```bash
-conda env create --file environment.yml
-```
-1. Install conda, e.g. using [mambaforge](https://github.com/conda-forge/miniforge#mambaforge)
+
+1. Install conda or mamba, e.g. using [mambaforge](https://github.com/conda-forge/miniforge#mambaforge)
 2. Install necessary packages to the `base` environment. Make sure you are installing them from the `conda-forge` channel.
 ```bash
-conda install -c conda-forge jupyterlab nb_conda_kernels
+mamba install -c conda-forge jupyterlab nb_conda_kernels
 ```
 3. Git-clone or download this repository to your computer
 4. In the command line, navigate to the downloaded folder, e.g.
@@ -97,7 +95,6 @@ cd /path/to/downloaded/t1e_bistability_code
 ```
 mamba env create --file environment.yml
 ```
-5. Run the notebooks manually or use `make` shortcuts (type `make help` for help)
 
 <h3>Open the code</h3>
 
